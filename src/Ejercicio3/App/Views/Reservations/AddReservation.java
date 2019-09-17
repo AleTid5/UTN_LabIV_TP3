@@ -31,6 +31,7 @@ public class AddReservation extends WindowBack implements IForm {
 		Label lblQuantity = new Label(47, 163, 66, 15, "Cantidad");
 		txtQuantity = new TextField(131, 161, 181, 19);
 		txtQuantity.setBounds(131, 161, 116, 19);
+		txtQuantity.requestFocus();
 		Label lblType = new Label(330, 163, 66, 15, "Tipo de habitación");
 		lblType.setBounds(265, 163, 131, 15);
 		Label lblExtras = new Label(47, 223, 66, 15, "Servicios Adicionales");
@@ -82,8 +83,8 @@ public class AddReservation extends WindowBack implements IForm {
 						chkGameRoom.isSelected());
 
 				new Alert("Creación exitosa", "La reserva se ha creado exitosamente!");
-				
 				ReservationController.clean(txtQuantity, cmbType, chkWifi, chkBreakFast, chkGym, chkGameRoom);
+				txtQuantity.requestFocus();
 			}
 		};
 	}

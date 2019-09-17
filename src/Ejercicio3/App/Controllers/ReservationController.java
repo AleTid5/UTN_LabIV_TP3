@@ -20,6 +20,7 @@ public class ReservationController extends Controller {
 		} catch(Exception e) {
 			setError(true);
 			value.setBackground(Color.RED);
+			value.requestFocus();
 		}
 	}
 	
