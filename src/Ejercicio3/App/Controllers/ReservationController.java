@@ -34,6 +34,15 @@ public class ReservationController extends Controller {
 		ReservationController.reservations.add(reservation);
 	}
 	
+	public static final void edit(Reservation reservation, int quantity, String selectedRoomType, Boolean withWifi, Boolean withBreakfast, Boolean withGym, Boolean withGameRoom) {
+		reservation.setCustomerQuantity(quantity);
+		reservation.setRoomType(selectedRoomType);
+		reservation.getAdditionalServices().set(0, withWifi);
+		reservation.getAdditionalServices().set(1, withBreakfast);
+		reservation.getAdditionalServices().set(2, withGym);
+		reservation.getAdditionalServices().set(3, withGameRoom);
+	}
+	
 	public static final void clean(TextField txtQuantity, JComboBox<String> cmbType, JCheckBox chkWifi, JCheckBox chkBreakFast, JCheckBox chkGym, JCheckBox chkGameRoom) {
 		txtQuantity.setBackground(Color.WHITE);
 		txtQuantity.setText("");

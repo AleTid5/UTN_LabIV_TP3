@@ -1,5 +1,7 @@
 package Ejercicio3.App.Controllers;
 
+import javax.swing.JComponent;
+
 public class Controller {
 	private static Boolean error = false;
 
@@ -18,5 +20,9 @@ public class Controller {
 
 	public static final void setError(Boolean error) {
 		Controller.error = error;
+	}
+	
+	public static final void changeVisibility(Boolean visible, JComponent ...jComponents) {
+		for (JComponent jComponent: jComponents) jComponent.setVisible(visible);
 	}
 }

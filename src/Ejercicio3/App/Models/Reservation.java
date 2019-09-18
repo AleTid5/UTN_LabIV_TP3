@@ -20,6 +20,10 @@ public class Reservation {
 		additionalServices.add(service);
 	}
 
+	public List<Boolean> getAdditionalServices() {
+		return this.additionalServices;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -54,5 +58,10 @@ public class Reservation {
 				(this.additionalServices.get(1) ? "✓" : "✘") + " Desayuno",
 				(this.additionalServices.get(2) ? "✓" : "✘") + " Gimnasio",
 				(this.additionalServices.get(3) ? "✓" : "✘") + " Sala de juegos");
+	}
+	
+	@Override
+	public boolean equals(Object reservation) {
+		return this.getId() == ((Reservation) reservation).getId();
 	}
 }
